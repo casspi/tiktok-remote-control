@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      body { font: 13px/1.6 -apple-system, sans-serif; width: 220px; padding: 12px; }
+      label { display: block; margin-top: 8px; }
+      input { width: 100%; box-sizing: border-box; }
+      button { margin-top: 10px; width: 100%; padding: 6px; }
+    </style>
+  </head>
+  <body>
+    <h4>中继连接设置</h4>
+    <label>Host <input id="host" placeholder="127.0.0.1" /></label>
+    <label>Port <input id="port" placeholder="8787" /></label>
+    <label>Token <input id="token" placeholder="粘贴 relay 输出的 TOKEN" /></label>
+    <button id="save">保存并重连</button>
+    <script src="popup.js"></script>
+  </body>
+</html>

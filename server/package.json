@@ -1,0 +1,16 @@
+{
+  "name": "auto-tiktok-relay",
+  "version": "1.0.0",
+  "private": true,
+  "description": "PC-side relay: bridges the phone PWA controller and the Chrome extension agent",
+  "main": "relay.js",
+  "scripts": {
+    "start": "node relay.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
+}

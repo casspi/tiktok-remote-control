@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <title>抖音遥控器</title>
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+      * {
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+      }
+      body {
+        margin: 0;
+        font-family: -apple-system, sans-serif;
+        background: #111;
+        color: #eee;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+      header {
+        padding: 10px 12px;
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+      #status {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #f43;
+        flex: none;
+      }
+      #status.on {
+        background: #3c3;
+      }
+      #hint {
+        font-size: 13px;
+        color: #bbb;
+      }
+      .grid {
+        flex: 1;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        padding: 0 12px 12px;
+        overflow-y: auto;
+        align-content: start;
+      }
+      .grid button {
+        border: none;
+        border-radius: 14px;
+        background: #222;
+        color: #eee;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        font-size: 26px;
+        padding: 12px 0;
+      }
+      .grid button span {
+        font-size: 12px;
+        color: #999;
+      }
+      .grid button:active {
+        background: #333;
+      }
+      #like {
+        color: #ff2c55;
+      }
+      .row {
+        display: flex;
+        gap: 12px;
+        padding: 0 12px 16px;
+      }
+      .row button {
+        flex: 1;
+        padding: 18px;
+        border: none;
+        border-radius: 16px;
+        font-size: 18px;
+        background: #2a2a2a;
+        color: #eee;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div id="status"></div>
+      <span id="hint">未连接</span>
+    </header>
+    <div class="grid">
+      <button data-cmd="prev">⬆️<span>上一个</span></button>
+      <button data-cmd="next">⬇️<span>下一个</span></button>
+      <button data-cmd="playpause">⏯<span>播放/暂停</span></button>
+      <button data-cmd="rewind">⏪<span>快退5秒</span></button>
+      <button data-cmd="forward">⏩<span>快进5秒</span></button>
+      <button data-cmd="like" id="like">❤️<span>点赞</span></button>
+      <button data-cmd="fullscreen">⛶<span>全屏</span></button>
+      <button data-cmd="webFullscreen">🖥<span>网页全屏</span></button>
+      <button data-cmd="volUp">🔊<span>音量+</span></button>
+      <button data-cmd="volDown">🔉<span>音量-</span></button>
+      <button data-cmd="search">🔍<span>搜索框</span></button>
+      <button data-cmd="comment">💬<span>发评论</span></button>
+      <button data-cmd="esc">↩️<span>退出/关闭</span></button>
+      <button data-cmd="closeTab">✖️<span>关标签页</span></button>
+    </div>
+    <div class="row">
+      <button id="auto">自动刷</button>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
